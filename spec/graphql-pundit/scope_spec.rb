@@ -20,7 +20,7 @@ RSpec.shared_examples 'after_scope' do |with_authorization|
       expect(result).to eq(nil)
     end
   else
-    it 'calls the scope' do
+    it 'calls the scope', focus: true do
       expect(result).to match_array(expected_result)
     end
   end

@@ -28,6 +28,7 @@ module GraphQL
 
       def resolve_field(obj, args, ctx)
         before_scope_return = apply_scope(@before_scope, obj, args, ctx)
+        binding.pry
         field_return = super(before_scope_return, args, ctx)
         apply_scope(@after_scope, field_return, args, ctx)
       end
